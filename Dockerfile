@@ -2,10 +2,14 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies for OpenCV and EasyOCR
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
     libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements
@@ -21,4 +25,4 @@ COPY api_production.py .
 EXPOSE 8000
 
 # Run
-CMD ["gunicorn", "api_production:app", "-w", "2", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "api_production:app", "-w", "2", "-k", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:$PORT", "--timeout", "120"]
