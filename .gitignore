@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -6,15 +7,28 @@ __pycache__/
 env/
 venv/
 ENV/
-*.log
-*.jpg
-*.png
-*.jpeg
-.DS_Store
-.idea/
+build/
+dist/
+*.egg-info/
+
+# EasyOCR моделі (завантажуються автоматично)
+.EasyOCR/
+*.pth
+
+# IDE
 .vscode/
+.idea/
 *.swp
 *.swo
-.env
-*.pth
-models/
+
+# Тестові файли
+test_*.jpg
+test_*.png
+*.processed.jpg
+
+# Логи
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
