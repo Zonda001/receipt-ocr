@@ -4,16 +4,16 @@ __pycache__/
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
-build/
-dist/
+*.egg
 *.egg-info/
+dist/
+build/
+.pytest_cache/
 
-# EasyOCR моделі (завантажуються автоматично)
-.EasyOCR/
-*.pth
+# Virtual environments
+venv/
+env/
+ENV/
 
 # IDE
 .vscode/
@@ -22,13 +22,34 @@ dist/
 *.swo
 
 # Тестові файли
-test_*.jpg
-test_*.png
-*.processed.jpg
+*.jpg
+*.jpeg
+*.png
+*.gif
+test_receipts/
+receipts/
 
-# Логи
-*.log
+# Результати OCR
+*.json
+*.processed.jpg
+*.result.json
+
+# Тимчасові файли
+*.tmp
+*.temp
+/tmp/
 
 # OS
 .DS_Store
 Thumbs.db
+
+# Логи
+*.log
+
+# Env файли
+.env
+.env.local
+
+# Кеш
+.cache/
+ocr_cache/
