@@ -31,6 +31,7 @@ app = FastAPI(
     title="Receipt OCR API 🇺🇦",
     description="API для розпізнавання українських чеків",
     version="1.0.0",
+    root_path="",
     docs_url="/docs",
     redoc_url="/redoc"
 )
