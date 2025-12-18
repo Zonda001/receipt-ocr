@@ -266,6 +266,7 @@ def health_check():
 
 
 @app.post("/api/ocr")
+@app.post("/api/ocr/")
 async def ocr_from_file(
         file: UploadFile = File(...),
         use_cache: bool = True
@@ -356,6 +357,7 @@ async def ocr_from_file(
 
 
 @app.post("/api/ocr/base64")
+@app.post("/api/ocr/base64/")
 async def ocr_from_base64(data: dict):
     """
     Розпізнати чек з base64 (для мобільних додатків)
